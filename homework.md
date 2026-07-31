@@ -18,4 +18,4 @@
 -play with route extensions 
 -order of routes matter a lot
 -install postman app and make a workspace/collections to test API calls
--wrtie logic to handle GET,POST,DELETE,PATCH API calls
+-wrtie logic to handle GET,POST,DELETE,PATCH API calls 

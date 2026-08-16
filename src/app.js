@@ -21,26 +21,34 @@ const app = express();
 // });
 
 
+app.use("/admin",g)
+
 app.use("/user",(req,res,next)=>{
     // route handler
     // res.send("route handler 1"); //it will show only sending request
     console.log("handling the route  user!!");  //it will print in a browser but doesn't shows the request 
-    // res.send("Response!!");
-    next();
     res.send("Response!!");
-},(req,res)=>{
-    //route handler 2
-    console.log("handling the route  user 2!!");  //it will print in a browser but doesn't shows the request 
-    res.send(" 2nd Response!!");
-},(req,res)=>{
-    //route handler 2
-    console.log("handling the route  user 3!!");  //it will print in a browser but doesn't shows the request 
-    res.send(" 3nd Response!!");
-},(req,res)=>{
-    //route handler 2 
-    console.log("handling the route  user 4!!");  //it will print in a browser but doesn't shows the request 
-    res.send(" 4nd Response!!");
-});
+    // next();
+    // res.send("Response!!");
+})
+
+// ,(req,res,next)=>{
+//     //route handler 2
+//     console.log("handling the route  user 2!!");  //it will print in a browser but doesn't shows the request 
+//     // res.send(" 2nd Response!!");
+//     next();
+// },(req,res,next)=>{
+//     //route handler 2
+//     console.log("handling the route  user 3!!");  //it will print in a browser but doesn't shows the request 
+//     // res.send(" 3nd Response!!");
+//     next();
+// },(req,res,next)=>{
+//     //route handler 2 
+//     console.log("handling the route  user 4!!");  //it will print in a browser but doesn't shows the request 
+//     // res.send(" 4nd Response!!");
+//     next();
+//     res.send(" 4nd Response!!")
+// });
 
 
 

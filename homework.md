@@ -19,3 +19,11 @@
 -order of routes matter a lot
 -install postman app and make a workspace/collections to test API calls
 -wrtie logic to handle GET,POST,DELETE,PATCH API calls 
+
+
+-Multiple route handlers - play with the code
+-next()
+-next function errors along with res.send()
+-app.use("/route",rH,[rH2,rH3],rH4,rH5)
+-what is middleware
+-how express js basically handlers requests behind the scene

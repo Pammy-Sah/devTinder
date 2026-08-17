@@ -28,3 +28,11 @@
 -what is middleware
 -how express js basically handlers requests behind the scene
 -diff betweeen app.use vs app.all
+
+-create a free cluster on mongodb website
+-install moongoose library
+-connect your application to the database"Connection-url"/devTinder
+-call the connectDB function and connect to database before starting application on port 7777
+-create  a user schema nd user model
+-create POST/signup API to add data to the database
+-push some documents using API calls from postman

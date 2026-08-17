@@ -1,5 +1,4 @@
-const express = require("express");
-const app = express();
+
 
 
 // this will only handle GET call to the /user
@@ -50,16 +49,53 @@ const app = express();
 //     res.send(" 4nd Response!!")
 // });
 
-const {adminAuth} = require("./middlewares/auth");
+// const {adminAuth} = require("./middlewares/auth");
 
-app.use("/admin",adminAuth);
+// app.use("/admin",adminAuth);
 
-app.use("/user",(req,res)=>{
-    // Route Handler
-    res.send("user data sent");
-});
+// app.use("/user",(req,res)=>{
+//     // Route Handler
+//     res.send("user data sent");
+// });
 
 
-app.listen(7777, () => {
+
+
+
+
+
+
+
+const express = require("express");
+const connectDB=require("./config/database");
+const app = express();
+const User = require("./models/user");
+// API creation...
+app.post("/signup",async (req,res)=>{
+    const userObj = {
+        firstName:"Sachine",
+        lastName :"Tendulkar",
+        emailId:"sachine@tendulkar.com",
+        password:"sachine@1234"
+    }
+    // creating a new instance of the User Model
+    
+    const user = new User(userObj);
+    try{
+         await user.save();
+    res.send("User added successfully!!");
+    }catch(err){
+        res.status(400).send("Error saving the user" + err.message);
+    }
+   
+})
+
+connectDB().then(()=>{
+    console.log("database connection established");
+    app.listen(7777, () => {
     console.log("server is successfully listening to port 7777...");
 });
+}).catch(err=>{
+    console.log("database cannot be connected")
+});
+

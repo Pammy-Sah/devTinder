@@ -21,16 +21,16 @@ const app = express();
 // });
 
 
-app.use("/admin",g)
+// app.use("/admin",g)
 
-app.use("/user",(req,res,next)=>{
-    // route handler
-    // res.send("route handler 1"); //it will show only sending request
-    console.log("handling the route  user!!");  //it will print in a browser but doesn't shows the request 
-    res.send("Response!!");
+// app.use("/user",(req,res,next)=>{
+//     // route handler
+//     // res.send("route handler 1"); //it will show only sending request
+//     console.log("handling the route  user!!");  //it will print in a browser but doesn't shows the request 
+//     res.send("Response!!");
     // next();
     // res.send("Response!!");
-})
+// })
 
 // ,(req,res,next)=>{
 //     //route handler 2
@@ -50,7 +50,10 @@ app.use("/user",(req,res,next)=>{
 //     res.send(" 4nd Response!!")
 // });
 
-
+app.use("/user",(req,res)=>{
+    // Route Handler
+    res.send("Route Handler 1");
+});
 
 
 app.listen(7777, () => {

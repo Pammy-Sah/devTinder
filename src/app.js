@@ -50,9 +50,13 @@ const app = express();
 //     res.send(" 4nd Response!!")
 // });
 
+const {adminAuth} = require("./middlewares/auth");
+
+app.use("/admin",adminAuth);
+
 app.use("/user",(req,res)=>{
     // Route Handler
-    res.send("Route Handler 1");
+    res.send("user data sent");
 });
 
 

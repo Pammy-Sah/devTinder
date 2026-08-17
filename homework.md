@@ -27,3 +27,4 @@
 -app.use("/route",rH,[rH2,rH3],rH4,rH5)
 -what is middleware
 -how express js basically handlers requests behind the scene
+-diff betweeen app.use vs app.all

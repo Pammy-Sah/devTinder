@@ -70,17 +70,14 @@ const express = require("express");
 const connectDB=require("./config/database");
 const app = express();
 const User = require("./models/user");
+
+app.use(express.json());
 // API creation...
 app.post("/signup",async (req,res)=>{
-    const userObj = {
-        firstName:"Sachine",
-        lastName :"Tendulkar",
-        emailId:"sachine@tendulkar.com",
-        password:"sachine@1234"
-    }
+   
     // creating a new instance of the User Model
     
-    const user = new User(userObj);
+    const user = new User(req.body);
     try{
          await user.save();
     res.send("User added successfully!!");
@@ -88,7 +85,7 @@ app.post("/signup",async (req,res)=>{
         res.status(400).send("Error saving the user" + err.message);
     }
    
-})
+});
 
 connectDB().then(()=>{
     console.log("database connection established");

@@ -78,7 +78,19 @@ app.post("/signup",async (req,res)=>{
     // creating a new instance of the User Model
     
     const user = new User(req.body);
+    const data = req.body;
+    
     try{
+        const ALLOWED_UPDATES =[
+        "userId","photoUrl","about","gender","age","skills"
+    ]
+
+    const isUpdateAllowed = Object.keys(data).every(k=>
+        ALLOWED_UPDATES.includes(k)
+    );
+    if(!isUpdateAllowed){
+        res.status(400).send("update not allowed");
+    }
          await user.save();
     res.send("User added successfully!!");
     }catch(err){

@@ -39,3 +39,10 @@
 -GET user by Id
 -create a /delete user API
 -API - update the user
+
+-Explore schema options from the document
+-add required,unique,lowercase,min,minilength,trim
+-Add default
+-create a custom validate function for gender
+-Improve the DB Schema - PUT all appropriate validation on each field on schema
+-Add timestamp to the user schema

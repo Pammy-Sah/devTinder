@@ -82,7 +82,7 @@ app.post("/signup",async (req,res)=>{
     
     try{
         const ALLOWED_UPDATES =[
-        "userId","photoUrl","about","gender","age","skills"
+        // "userId","photoUrl","about","gender","age","skills"
     ]
 
     const isUpdateAllowed = Object.keys(data).every(k=>

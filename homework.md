@@ -36,3 +36,6 @@
 -create  a user schema nd user model
 -create POST/signup API to add data to the database
 -push some documents using API calls from postman
+-GET user by Id
+-create a /delete user API
+-API - update the user

@@ -47,6 +47,12 @@
 -Improve the DB Schema - PUT all appropriate validation on each field on schema
 -Add timestamp to the user schema
 -add API level validation on Patch request & signup post request
-- DATA Sanitization add validation for each field
+-DATA Sanitization add validation for each field
 -install validator
 -explore validator function  nd use validator function for password,email
+
+-validate data in signUp API
+-Install bcrypt package
+-create passwordHash using bcrypt.hash and save the user with encrypted password
+-create login API
+-compare passwords and throw error if email or password is invalid
